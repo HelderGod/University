@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1028837232391",
+    "project_id": "tugatrivia",
+    "storage_bucket": "tugatrivia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028837232391:android:2bd3b37874e8b83a9b3fa2",
+        "android_client_info": {
+          "package_name": "com.example.tugatrivia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-xR5iBslvH9FmLfx44s7PdZPbZ4nXqMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

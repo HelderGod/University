@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_bg"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#6d2709"
+        android:text="SAIR"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_logout"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/tv_logo"
+            android:layout_width="223dp"
+            android:layout_height="242dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="Logo"
+            android:src="@drawable/ic_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:text="Bem vindo!"
+            android:textColor="#6d2709"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:columnCount="2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:rowCount="1">
+
+            <Button
+                android:id="@+id/btn_easy"
+                android:layout_width="0dp"
+                android:layout_height="73dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#6d2709"
+                android:text="MODO FÁCIL"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_hard"
+                android:layout_width="0dp"
+                android:layout_height="73dp"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#6d2709"
+                android:text="MODO DIFÍCIL"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </GridLayout>
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:backgroundTint="#6d2709"
+            android:text="JOGAR"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</RelativeLayout>
