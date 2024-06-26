@@ -1,0 +1,5 @@
+/home/gui/Documents/Uni/Redes/Sockets/build/CMakeFiles/rebuild_cache.dir
+/home/gui/Documents/Uni/Redes/Sockets/build/CMakeFiles/edit_cache.dir
+/home/gui/Documents/Uni/Redes/Sockets/build/CMakeFiles/client.dir
+/home/gui/Documents/Uni/Redes/Sockets/build/CMakeFiles/server.dir
+/home/gui/Documents/Uni/Redes/Sockets/build/CMakeFiles/ctest.dir
