@@ -1,0 +1,152 @@
+\documentclass[12pt]{article}
+\usepackage{lingmacros}
+\usepackage{tree-dvips}
+\usepackage[portuguese]{babel}
+\usepackage{anyfontsize}
+\usepackage{titletoc}
+\usepackage[titles]{tocloft}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{amsmath}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\makeatletter
+\let\latexl@section\l@section
+\def\l@section#1#2{\begingroup\let\numberline\@gobble\latexl@section{#1}{#2}\endgroup}
+\makeatother
+\makeatother
+
+\title {
+{\large Unidade Curricular de Estruturas de Dados e Algoritmos II 
+\\ Licenciatura em Engenharia Informática}
+\\ \vspace{2 cm}
+\includegraphics[width=0.5\textwidth]{ue}
+\\[1 cm]\textbf{\Huge Hill the Climber}\vspace{1 cm}
+}
+
+\author {
+\normalsize \textbf{Grupo}:\\ \normalsize g216
+\vspace{0.3 cm}
+\\ \normalsize \textbf{Discentes}:\\ \normalsize Helder Godinho nº42741\\ \normalsize Guilherme Grilo nº48921
+}
+
+\date{\normalsize abril 2022}
+
+\begin{document}
+
+\maketitle
+\vspace{1.5 cm}
+\begin{center}
+\normalsize \textbf{Docente}: \\ \normalsize Vasco Pedro
+\end{center}
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+ \renewcommand{\contentsname}{\begin{center}
+ \LARGE Índice
+ \end{center}}
+
+
+
+\tableofcontents
+%---------------------------------------------------%
+\newpage
+\begin{center}
+\section{Introdução}
+\end{center}
+\paragraph{}
+O presente trabalho consiste na criação de um algoritmo que tem como principal objetivo descobrir o melhor caminho desde um ponto inicial, cujo y terá valor 0, até ao ponto final, cujo y terá a altura máxima dada como input pelo utilizador.
+\paragraph{} 
+Para a realização deste trabalho tivemos que recorrer ao uso de grafos. Um grafo pode ser definido como uma estrutura de dados que consiste essencialmente em um número finito de vértices também chamados de nós, e ainda um número finito de conjuntos na forma (u, v) que são chamados de arcos, que indicam que existe uma ligação entre o vértice u e o vértice v. Quando essa mesma ligação é mútua, isto é, se ambos os vértices se conectam um ao outro, podemos denominar um grafo desse género como grafo não orientado, caso contrário designa-se como grafo orientado. O arco pode ainda conter outra propriedade, o peso, que, quando presente nos arcos de um grafo, o mesmo passa a ser apelidado de grafo pesado.
+Existem 2 formas de percorrer um grafo, isto é, de visitar todos os nós de um determinado grafo e são eles: \textit{Breadth First Search} (BFS), em português percurso em largura, consiste em começar num certo nó, visitar os seus adjacentes, de seguida visitar os adjacentes destes e por aí adiante até todos os nós terem sido visitados; de salientar que este foi o método escolhido para o nosso trabalho. Temos ainda o \textit{Depth First Traversal} (DFS), em português percurso em profundidade, que consiste em começar num determinado nó, visitar um nó adjacente deste e fazer isto até chegar a um nó que não possua qualquer nó adjacente a si ou, se possuir, que não tenha sido ainda visitado. 
+%---------------------------------------------------%
+\newpage
+\begin{center}
+\section{Algoritmo}
+\end{center}
+\paragraph{}
+O nosso algoritmo divide-se essencialmente entre três classes, sendo as três bastante importantes para o sucesso deste trabalho.
+\subsection{Climb}
+\paragraph{}
+A classe Climb pode ser considerada como a classe principal de entre as três, pois é esta que recebe todos os dados importantes para a resolução do problema, tais como o número de pontos disponíveis, a altura máxima que o Hill terá que alcançar ou até mesmo as coordenadas dos vértices, sendo que passará estas mesmas coordenadas para a classe Vertex durante a execução do algoritmo, através da função. 
+\paragraph{}
+Para além disso, a \textit{Climb} é ainda responsável pela construção do grafo (que será explicada a seguir) e pelo cálculo final do melhor caminho desde o ponto inicial ao ponto final. Após a contrução do grafo, de forma a se calcular a melhor distância do vértice inicial ao vértice final, percorre-se os nós do grafo recorrendo ao BFS com algumas alterações, de forma a adaptar esta forma de pesquisa ao nosso objetivo. Inicialmente, começamos por inicializar a variável \textit{d}, que guarda o número de vértices que foi necessário percorrer desde um certo vértice até ao vértice em questão. As alterações referidas foram feitas dentro do ciclo que serve para percorrer o nó adjacente de determinado nó, isto é, foram introduzidas duas condições que permitem verificar se a distância entre o vértice e o seu adjacente é menor ou igual ao salto de teste e, em caso afirmativo, calcula o número de vértices que foi necessário percorrer para chegar ao adjacente, que é sempre o vértice proveniente + 1, e se este for inferior ao valor guardado na variável \textit{d} do adjacente, então troca-se o valor da mesma variável \textit{d} pelo novo valor calculado. Após terminar de percorrer todos os nós até ao final, devolve-se então o valor guardado na variável \textit{d} do vértice final e se este ainda possuir o valor \textit{MAX\_VALUE} significa que não é possível chegar a esse mesmo ponto com o salto atual, então declara-se como \textit{"unreachable"}, caso contrário imprime-se o valor obtido.
+\subsection{Vertex}
+\paragraph{}
+A classe Vertex é responsável por alojar as coordenadas de todos os vértices dados, de forma a poder calcular a distância entre os y's de dois vértices com o salto que o Hill pode realizar. Em caso afirmativo, ou seja, se a distância de salto for inferior ou igual à distância dos y's, então será necessário calcular a distância entre os dois vértices, através da função \textit{calcDistance()}, e se a mesma for inferior ou igual ao salto, então significa que este é um caminho que Hill poderá percorrer, sendo que ambos se podem então conectar um ao outro, de forma não orientada. Esta ligação é possível com recurso a uma lista do tipo da classe \textit{Edge} com o nome de \textit{destination}, cujo principal papel é guardar todos os vértices aos quais um determinado vértice se pode conectar.
+\paragraph{}
+Esta classe alberga ainda outra função,\textit{compareTo()}, que é implementada pela interface \textit{Comparable}, que serve para indicar à \textit{priority Queue}, que se encontra na classe \textit{Climb}, que deve ordenar os vértices do y menor para o y maior, o que facilita bastante na construção do grafo.
+\subsection{Edge}
+\paragraph{}
+Esta classe serve essencialmente para a lista \textit{destination}, que está presente na classe \textit{Vertex}, pois a mesma possui apenas duas instâncias, uma do tipo \textit{Vertex}, \textit{destiny}, de forma a guardar o vértice destino de um determinado vértice, e outra do tipo \textit{int}, \textit{distance}, que guarda a distâcia entre os dois vértices.
+%---------------------------------------------------%
+\newpage
+\begin{center}
+\section{Grafo}
+\end{center}
+\paragraph{}
+Este grafo, ao contrário de outros que tínhamos implementado na resoluação de probelmas anteriores, difere um pouco na sua implementação, pois a forma mais comum de implementar um grafo é fazer um \textit{array} de listas, tudo na mesma classe, neste caso o nosso grafo é implementado de maneira um pouco diferente, pois o \textit{array} do tipo \textit{Vertex} está declarado na classe \textit{Climb}, já a lista do tipo \textit{Edge} está declarada na classe \textit{Vertex}. Apesar desta ligeira diferença, na prática, o grafo funciona da mesma forma que os mais comuns.
+\paragraph{}
+Inicialmente começamos por passar as coordenadas de cada ponto para a classe \textit{Climb} de forma a podermos inicializar a classe \textit{Vertex} de cada vez que passamos um ponto e colocá-los todos numa \textit{priority Queue}, que os ordena do menor y para o maior. De salientar que criamos ainda mais dois pontos para além dos dados pelo \textit{input}, o ponto inicial de coordenadas (0, 0) e o ponto final de coordenadas (0, altura máxima),sendo a altura máxima dada também como \textit{input}.
+\paragraph{}
+De seguida, retiram-se os vértices da \textit{Queue} um por um e colocam-se num \textit{array} e aqui sim começa a verdadeira construção do grafo. Após todos os vértices estarem colocados no \textit{array}, pegamos no primeiro vértice do \textit{array} (\textit{index} 0) e começamos a comparar com os restantes vértices da seguinte forma: calculamos a distância entre o y do vértice em questão e do vértice com o qual estamos a comparar, se essa mesma distância for inferior ou igual ao salto máximo que o Hill poderá fazer, então comparamos a distância entre os dois vértices e se essa também for inferior ou igual ao salto máximo significa que podemos adicionar o vértice com o qual estamos a comparar à lista \textit{destination} do vértice em questão; caso contrário, quando encontramos um vértice que, calculando a distância dos y's, essa distância é superior ao salto máximo, então quebramos o ciclo, não sendo necessário verificar os restantes vértices, então pegamos noutro vértice e repetimos o processo até todos os pontos terem sido utilizados.
+\paragraph{}
+%---------------------------------------------------%
+\newpage
+\begin{center}
+\section{Complexidade}
+\end{center}
+%---------------------------------------------------%
+\subsection{Temporal}
+\paragraph{}
+A função main() chama dois métodos que afetam a complexidade temporal do algoritmo, o método \textit{addToArray()} na classe \textit{Climb}, que serve para passar os vértices ordenados da \textit{Queue} para o \textit{array}, então a complexidade pode ser considerada O(n*log(n)), sendo n o número de vértices presentes na \textit{Queue}. O segundo método acima mencionado é o método \textit{build()} que também se encontra na classe \textit{Climb}, que tem como função construir o grafo, então na pior das hipóteses a complexidade temporal é O(n*log(n)), pois n, tal como anteriormente referido, é o número de vértices.
+\paragraph{}
+Por fim, no método que é responsável por calcular o valor final desejado, que é o \textit{bestPath()}, na pior das hipóteses é necessário visitar todos os nós presentes no grafo duas vezes, logo, no pior dos casos, a complexidade temporal é de O(n²). Como este método pode ser chamado mais do que uma vez, consoante o número de testes a serem executados, então na verdade a complexidade temporal é p*O(n²), sendo p o número de testes a serem feitos.
+\paragraph{}
+Assim, é possível concluir que a complexidade temporal final do algoritmo é de:
+
+\begin{equation*}
+O(n*log(n)) + O(n*log(n)) + p*O(n²) = O(2(n*log(n)) + p*n^{2})
+\end{equation*}
+
+\subsection{Espacial}
+\paragraph{}
+A inicialização do \textit{array} do tipo \textit{Vertex v}, presente na classe \textit{Climb}, apresenta como complexidade temporal O(v), sendo que v é o número de vértices disponibilizados no \textit{input}.
+\paragraph{}
+Outro fator que afeta a complexidade espacial do algoritmo é a inicialização da lista \textit{destination}, de tipo \textit{Edge}, de cada um dos vértices, ou seja, podemos considerar a sua complexidade espacial como O(e), sendo e o número de listas \textit{destination}.
+\paragraph{}
+Desta forma, é possível concluir que a complexidade espacial final do nosso programa é:
+
+\begin{equation*}
+O(v) + O(e) = O(v + e)
+\end{equation*}  
+%---------------------------------------------------%
+\newpage
+\begin{center}
+\section{Comentários adicionais}
+\end{center}
+\paragraph{}
+Ao longo da realização deste trabalho sentimos algumas dificuldades que conseguimos ultrapassar com sucesso tais como, entender como a implementação da interface \textit{Comparable} nos poderia ajudar a organizar os vértices pela altura, recorrendo a uma \textit{priority Queue}; o facto de não necessitarmos de comparar a distância de todos os nós, pois isso levaria a que o nosso algoritmo levaria muito tempo a correr, o que levaria a "\textit{Time Limit Exceeded}" no \textit{Mooshak}. Mas a maior dificuldade sentida foi em relação ao cálculo da distância entre dois vértices pois, após várias "\textit{Wrong Answer}" no \textit{Mooshak}, conseguimos descobrir que o nosso erro seria no arredondamento de \textit{double} para \textit{int}, pois era necessário arredondar sempre para cima, sendo então o método a utilizar neste caso o \textit{Math.ceil()}.
+%---------------------------------------------------%
+\newpage
+\begin{center}
+\section{Conclusão}
+\end{center}
+\paragraph{}
+Após o término deste trabalho, concluímos que, apesar das dificuldades que fomos enfrentando ao longo da realização do mesmo, fomos capazes de concluir esta tarefa com sucesso.
+\paragraph{}
+De referir ainda que este trabalho revelou-se bastante importante para a consolidação de conhecimentos na matéria dos grafos, pois permitiu-nos alterar a maneira de implementar um grafo e o resultado ser o expectável na mesma.
+%---------------------------------------------------%
+\newpage
+\begin{center}
+\section{Bibliografia}
+\end{center}
+Pedro, Vasco in "Aulas de Estruturas de Dados e Algoritmos II". 2022 in Universidade de Évora.
+\vspace{0.3cm} \\ Pedro, Vasco in eda2-t2-climber.pdf. Universidade de Évora's MOODLE.
+\vspace{0.3cm} \\ \url{https://www.geeksforgeeks.org/graph-and-its-representations/} 
+\vspace{0.3cm} \\ \url{https://techvidvan.com/tutorials/breadth-first-search/}
+\vspace{0.3cm} \\ \url{https://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm}
+%--------------------------------------------------%
+\end{document}
