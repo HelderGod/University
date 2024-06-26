@@ -1,0 +1,109 @@
+DROP TABLE IF EXISTS animals CASCADE;
+CREATE TABLE animals(
+    register DECIMAL PRIMARY KEY, 
+    nameA varchar(100),
+    sex varchar(10),
+    localA VARCHAR(10)
+);
+DROP TABLE IF EXISTS habitat CASCADE;
+CREATE TABLE habitat(
+    local varchar(10) PRIMARY KEY,
+    area varchar(100),
+    atmosphere varchar(100),
+    environment varchar(100)
+);
+
+DROP TABLE IF EXISTS class_bio CASCADE;
+CREATE TABLE class_bio(
+    species varchar(100),
+    registerA DECIMAL,
+    class varchar(100),
+    orderA varchar(100),
+    family varchar(100),
+    PRIMARY KEY (species, registerA), 
+    FOREIGN KEY (registerA) REFERENCES animals ON DELETE RESTRICT
+);
+
+DROP TABLE IF EXISTS captivity CASCADE;
+CREATE TABLE captivity(
+    birthdayA DATE,
+    registerA DECIMAL,
+    registerDad DECIMAL,
+    registerMom DECIMAL,
+    PRIMARY KEY (birthdayA, registerA),
+    FOREIGN KEY (registerA) REFERENCES animals ON DELETE RESTRICT
+);
+
+DROP TABLE IF EXISTS capture CASCADE;
+CREATE TABLE capture(
+    birthdayA DATE,
+    dateC DATE,
+    localC varchar(100),
+    registerA DECIMAL,
+    PRIMARY KEY (dateC, registerA),
+    FOREIGN KEY (registerA) REFERENCES animals on DELETE RESTRICT 
+);
+
+DROP TABLE IF EXISTS employees CASCADE;
+CREATE TABLE employees(
+    nameE varchar(100),
+    nif DECIMAL PRIMARY KEY,
+    dateS DATE
+);
+
+DROP TABLE IF EXISTS keeper CASCADE;
+CREATE TABLE keeper(
+    nifE DECIMAL,
+    registerA DECIMAL,
+    PRIMARY KEY (nifE, registerA),
+    FOREIGN KEY (nifE) REFERENCES employees ON DELETE RESTRICT,
+    FOREIGN KEY (registerA) REFERENCES animals ON DELETE RESTRICT
+);
+
+DROP TABLE IF EXISTS aux_keeper CASCADE;
+CREATE TABLE aux_keeper(
+    nifE DECIMAL,
+    localH varchar(10),
+    PRIMARY KEY (nifE, localH),
+    FOREIGN KEY (nifE) REFERENCES employees ON DELETE RESTRICT,
+    FOREIGN KEY (localH) REFERENCES habitat ON DELETE RESTRICT
+);
+
+DROP TABLE IF EXISTS veterinary CASCADE;
+CREATE TABLE veterinary (
+    nifE DECIMAL PRIMARY KEY,
+    FOREIGN KEY (nifE) REFERENCES employees ON DELETE RESTRICT
+);
+
+DROP TABLE IF EXISTS admin CASCADE;
+CREATE TABLE admin (
+    nifE DECIMAL PRIMARY KEY,
+    FOREIGN KEY (nifE) REFERENCES employees ON DELETE RESTRICT
+);
+
+DROP TABLE IF EXISTS responsible CASCADE;
+CREATE TABLE responsible(
+    nifresp DECIMAL,
+    niftrab DECIMAL PRIMARY KEY,
+    FOREIGN KEY (nifresp) REFERENCES employees ON DELETE RESTRICT,
+    FOREIGN KEY (niftrab) REFERENCES employees ON DELETE RESTRICT
+);
+
+DROP TABLE IF EXISTS telephone CASCADE;
+CREATE TABLE telephone(
+    nifE DECIMAL,
+    numberTele DECIMAL,
+    PRIMARY KEY (nifE, numberTele),
+    FOREIGN KEY (nifE) REFERENCES employees ON DELETE RESTRICT
+);
+
+DROP TABLE IF EXISTS consultations CASCADE;
+CREATE TABLE consultations(
+    consult_date DATE,
+    nifE DECIMAL,
+    registerA DECIMAL,
+    diagnosis varchar(100),
+    PRIMARY KEY (nifE, registerA, consult_date, diagnosis),
+    FOREIGN KEY (nifE) REFERENCES employees ON DELETE RESTRICT,
+    FOREIGN KEY (registerA) REFERENCES animals ON DELETE RESTRICT
+);
