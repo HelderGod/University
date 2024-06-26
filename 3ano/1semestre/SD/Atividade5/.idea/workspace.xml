@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="eb7004c8-a4ba-4ed7-aaca-5c5909221137" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Atividade 7/jdbc_nb/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 7/jdbc_nb/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 7/jdbc_nb/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 7/jdbc_nb/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 7/jdbc_nb/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 7/jdbc_nb/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 7/jdbc_nb/src/sd/PostgresConnector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 7/jdbc_nb/src/sd/TesteAcessoBD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 9/spring-data-jpa-postgresql_maven01/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 9/spring-data-jpa-postgresql_maven01/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 9/spring-data-jpa-postgresql_maven01/src/main/java/com/mkyong/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 9/spring-data-jpa-postgresql_maven01/src/main/java/com/mkyong/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 9/spring-data-jpa-postgresql_maven01/src/main/java/com/mkyong/StartApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 9/spring-data-jpa-postgresql_maven01/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Atividade 9/spring-data-jpa-postgresql_maven01/src/test/java/com/mkyong/BookRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 2/sd02sockets/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 2/sd02sockets/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 2/sd02sockets/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 2/sd02sockets/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 2/sd02sockets/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 2/sd02sockets/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 2/sd02sockets/src/sd/EchoClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 2/sd02sockets/src/sd/EchoServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/src/sd/Pedido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/src/sd/PedidoDeConsulta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/src/sd/PedidoDeRegisto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/src/sd/Registo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/src/sd/VeiculosClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 3/sd03veiculos2/src/sd/VeiculosServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 6/aulaJAR/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 6/aulaJAR/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 6/aulaJAR/informacao_para_Manifest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 6/aulaJAR/src/j/A.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../atividade 6/aulaJAR/src/j/B.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2HoegQo5WwholCc2XHlqTGvNhto" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/gui/Documents/Uni/3ano/1semestre/SD/Atividade5"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="eb7004c8-a4ba-4ed7-aaca-5c5909221137" name="Changes" comment="" />
+      <created>1668955973482</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668955973482</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

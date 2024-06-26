@@ -1,0 +1,36 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 26, 2022, 11:43:41 AM
+    Author     : gui
+*/
+
+h1 {
+            color: red;
+            border-bottom: 1px solid red;
+        }
+
+        h2 {
+            color: gray;
+            margin-left: 100px;
+        }
+
+        p {
+            font-size: small;
+            font-family: 'sans-serif';
+            margin-left: 100px;
+        }
+        
+        p * {
+            color: blue;
+            font-weight: bold;
+        }
+        img {
+            float: right;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
